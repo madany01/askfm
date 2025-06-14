@@ -96,7 +96,7 @@ class Storage{
 
 public:
 	static string merge_path(const string &root, const string &cont){
-		return root + "\\" + cont;
+		return (fs::path(root) / cont).string();
 	}
 
 	static string modification_data(const string &path) {
@@ -158,7 +158,7 @@ public:
 
 
 class Answer{
-    static const inline string root = "D:\\workspaces\\eclipse_ws\\Ask\\data\\answers";
+    static const inline string root = (fs::current_path() / "data" / "answers").string();
     string id;
     string content;
     string path;
@@ -260,7 +260,7 @@ public:
 };
 
 class Question{
-    static const inline string root = "D:\\workspaces\\eclipse_ws\\Ask\\data\\questions";
+    static const inline string root = (fs::current_path() / "data" / "questions").string();
     enum paths {dirPath=0, qPath, aPath, thPath};
 
     string id;
@@ -516,7 +516,7 @@ public:
 };
 
 class UserProfile{
-    inline static const string root = "D:\\workspaces\\eclipse_ws\\Ask\\data\\users";
+    inline static const string root = (fs::current_path() / "data" / "users").string();
 
     string id;
     string username;
