@@ -47,7 +47,7 @@ Q&A console-based C++ application with file-based data storage.
 ## Running
 
 ```bash
-git clone git@gitlab.com:madany/askfm.git
+git clone git@github.com:madany01/askfm.git
 cd askfm
 
 g++ --std=c++20 -o run.out src/main.cpp
